@@ -1,0 +1,7 @@
+fdk
+oci
+xmltodict
+datetime
+cx_Oracle
+pytz
+psutil
