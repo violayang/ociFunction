@@ -79,7 +79,7 @@ def sql_command(dic):
 
 
 def db_connection(os_client):
-    file = get_object(os_client, 'bucket', 'object') ## replace bucket and object
+    file = get_object(os_client, "<bucket_name>", "<object_name>") ## replace bucket and object
     conn = json.loads(file)
     user = str(conn['user'])
     password = str(conn['password'])
@@ -104,7 +104,7 @@ def db_execution(connection, sql_command):  ## parse sql_command: list
 
 def put_object(os_client, txt, fileName):
     namespace = os_client.get_namespace().data
-    bucket_name = "bucketName"  ## replace bucketName
+    bucket_name = "<bucketName>"  ## replace bucketName
     file_name = time.strftime(fmt) + str(fileName) + '.txt'
     response = os_client.put_object(namespace_name=namespace, bucket_name=bucket_name, object_name=file_name,
                                     put_object_body=txt)
